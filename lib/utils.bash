@@ -40,6 +40,9 @@ get_arch() {
 	if [[ "$machine" =~ "x86_64" ]]; then
 		echo "amd64"
 		return
+	elif [[ "$machine" =~ arm.* ]]; then
+		echo "$machine"
+		return
 	fi
 
 	fail "Unknown arch"
